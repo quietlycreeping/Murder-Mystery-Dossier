@@ -10,7 +10,7 @@ import AdminPage from './components/adminPage/AdminPage';
   <HashRouter>
     <Routes>
       <Route path='/' element={<HomePage/>}/>
-      <Route path='/admin' element={<AdminPage/>}/>
+      <Route path='/ad,om' element={<HomePage/>}/>
     </Routes>
   </HashRouter>
 )

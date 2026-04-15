@@ -6,10 +6,9 @@ const AdminPage = () => {
         <>
             <div>
                 Admin Page here
-                <Link className="router-link"
-                to={ `/`}>
-                    <p>Home Page</p>
-                </Link>
+                <nav>
+                    <Link to="/">Home</Link>
+                </nav>
             </div>
         </>
     )
