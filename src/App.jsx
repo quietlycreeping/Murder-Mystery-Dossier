@@ -1,5 +1,5 @@
 import React from 'react';
-import { HashRouter, Route } from 'react-router-dom';
+import { HashRouter, Route , Routes} from 'react-router-dom';
 
 //======Pages===========================
 import HomePage from './components/homePage/HomePage';
@@ -8,14 +8,10 @@ import AdminPage from './components/adminPage/AdminPage';
 
  const App = () => (
   <HashRouter>
-    <Route
-      exact path='/'
-      component={HomePage}
-    />
-    <Route
-      exact path='/admin'
-      component={AdminPage}
-    />
+    <Routes>
+      <Route path='/' element={<HomePage/>}/>
+      <Route path='/admin' element={<AdminPage/>}/>
+    </Routes>
   </HashRouter>
 )
 
