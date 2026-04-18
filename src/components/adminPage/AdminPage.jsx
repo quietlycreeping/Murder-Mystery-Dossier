@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 const AdminPage = () => {
     return (
         <>
-            <div>
+            <div className="main-content">
                 Admin Page here
                 <nav>
                     <Link to="/">Home</Link>

@@ -4,7 +4,7 @@ import "./homePage.css";
 const HomePage = () => {
   return (
     <>
-      <div>
+      <div className="main-content">
         Home Page here
       <nav>
           <Link to="/admin">Admin</Link>
