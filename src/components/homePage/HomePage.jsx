@@ -1,14 +1,12 @@
 import { Link } from "react-router-dom";
-import "./homePage.css";
+import Header from "../header-footer/Header";
 
 const HomePage = () => {
   return (
     <>
+    <Header/>
       <div className="main-content">
         Home Page here
-      <nav>
-          <Link to="/admin">Admin</Link>
-      </nav>
       </div>    
     </>
   )
