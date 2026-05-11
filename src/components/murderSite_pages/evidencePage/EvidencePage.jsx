@@ -1,7 +1,5 @@
-import { Link } from "react-router-dom";
-import React from 'react';
 import Header from "../../header-footers/Header.jsx";
-import PartyState from "../../../PartyState.jsx";
+import PartyState from "../../contexts/PartyContext.jsx";
 
 const EvidencePage = () => {
   return (

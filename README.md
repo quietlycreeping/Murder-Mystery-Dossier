@@ -11,7 +11,8 @@ The site is not connected to a server so to able to change the site for the curr
     - [Home Page Settings](#home-page-settings)
     - [Evidence Page Settings](#evidence-page-settings)
 - [Images Creation](#images-creation)
-- [To Overwrite](to-overwrite)
+    - [Header](#header)   
+- [To Overwrite](#to-overwrite)
     - [Variables](#variables)   
     - [JSON Files](#json-files)   
     - [Image Files](#image-files)
@@ -39,14 +40,24 @@ wordsss
 ## Image Creation
 wordssss
 
+*Note*: image dimensions are written as (width * height)
+
+### Header
+- Top Image Background
+    - No text (site title will be added with a text overlay)
+    - *Size*: XXXpx * XXXpx
+    - *File Name*: headerBackground
+    - *Type*: png
+
 ## To Overwrite
 wordssss
+
+### Variables
+wordsss
 
 ### JSON Files
 wordsss
 
-### Image Files
-wordsss
 ---
 
 ## Author

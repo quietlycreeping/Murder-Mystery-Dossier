@@ -1,15 +1,14 @@
 import Header from "../../header-footers/Header.jsx";
-import PartyState from "../../contexts/PartyContext.jsx";
 
-const CharacterPage = () => {
+const Task2Page = () => {
   return (
     <>
     <Header/>
       <div className="main-content">
-        Character Profile Page here
+        Character Task Page 2 here
       </div>         
     </>
   )
 }
 
-export default CharacterPage
+export default Task2Page

@@ -1,5 +1,3 @@
-import React from 'react';
-import { Link } from "react-router-dom";
 import A_Header from "../../header-footers/A_Header";
 
 const A_HomePage = () => {
