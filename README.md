@@ -62,22 +62,18 @@ wordssss
 
 ### Variables
 The only variables that are hard coded are in PartyContext.jsx
-> src
->   components
->       contexts
->           * PartyContext.jsx *
-
- States      siteTemplate│isMystery│isMurder 
- ════════════════════════╪═════════╪════════ 
- Template        True    │   NA    │   NA    
- ────────────────────────┼─────────┼──────── 
- Pre-Party      False    │  False  │ False   
- ────────────────────────┼─────────┼──────── 
- Pre-Murder     False    │  True   │ False   
- ────────────────────────┼─────────┼──────── 
- Post-Murder    False    │  True   │  True   
- ════════════════════════╧═════════╧════════ 
-
+~~~
+src 
+	components
+		contexts 
+			PartyContext.jsx
+~~~
+| States | siteTemplate | isMystery | isMurder |
+| :---: | :---: | :---: | --- |
+| Template | True | NA | NA |
+| Pre-Party | False | False | False |
+| Pre-Murder | False | True | False |
+| Post-Murder | False | True | True |
 - Template = No ongoing party. Site filled with lorem ispum and all header buttons/links are visible
 - Pre-Party = Party is currently being planned/hosted and before party start time. Site will have party color, images, and content. Will stay in this state until the offical start of the party. Users will be able to log in and look at their character info.
 - Pre-Murder = A party in active status. All that is true in Pre-Party will remain with the addtion of each character's task list.
