@@ -17,8 +17,8 @@ export const PartyContext = createContext();
 
 export const PartyContextProvider  = ({ children }) => {
     const [siteTemplate, setsiteTemplate] = useState(true); //did the mystery start?  
-    const [isMystery, setIsMystery] = useState(false);
-    const [isMurder, setIsMurder] = useState(false);
+    const [isMystery, setIsMystery] = useState(false); 
+    const [isMurder, setIsMurder] = useState(false); 
 
     const value = {siteTemplate,isMystery,isMurder};
     return (
