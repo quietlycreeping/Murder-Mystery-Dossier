@@ -4,9 +4,9 @@ import "./header.css";
 import { UserContext } from "../contexts/UserContext";
 
   
-const Header = () => 
+const Header = () =>   
 {
-  const {isLoggedIn, userCharacter} = useContext(UserContext);
+  const {loggedIn, userCharacter} = useContext(UserContext);
   
   return (
     <>
@@ -17,7 +17,7 @@ const Header = () =>
           <button><Link to="/evidence"> Evidence </Link></button>
 
           {/* Button either leads to login or a the user's character */}
-          {isLoggedIn ? 
+          {loggedIn ? 
           <button><Link to="/profile"> Profile </Link></button> : //
           <button><Link to="/login"> Login </Link></button>}
 

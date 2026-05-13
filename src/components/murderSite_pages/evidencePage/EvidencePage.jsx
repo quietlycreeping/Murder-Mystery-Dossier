@@ -1,5 +1,4 @@
 import Header from "../../header-footers/Header.jsx";
-import PartyState from "../../contexts/PartyContext.jsx";
 
 const EvidencePage = () => {
   return (
