@@ -1,26 +1,34 @@
+/*=========================================================
+ Author:     J. Orlando
+ Date:       May 2026
+ Description: Form component to be used for login
+==========================================================*/
 import { useActionState, useState, useContext, } from "react";
-import { UserContext } from "../../contexts/UserContext";
 import { useNavigate } from "react-router-dom"
+//======Contexts===========================
+import { UserContext } from "../../contexts/UserContext";
 
 const LoginForm = () => {
-    const {checkLogin, loggedIn} = useContext(UserContext);
-    const navigate = useNavigate();
+    //const {getLoggedIn, loggedIn} = useContext(UserContext);
+    const navigate = useNavigate("/profile", {replace: true});
   
-    function handleLogin(formData){
-        const userName = formData.get("userName")
-        const password = formData.get("password")
-        checkLogin (userName, password);
-       loggedIn ? (navigate("/profile", {replace: true})) : (alert('Wrong password or username.'));
+    function handleLogin(){
+        const [formData, setFormData] = useState({
+            inputUsername: "",
+            inputPassword: "",
+        });
+        //setFormData(formData.inputUsername.get(inputUsername), formData.inputPassword.get(inputPassword));    
+
+        //loggedIn ? navigate : (alert('Wrong password or username.'));
     }
     return (
     <>
     <form action={handleLogin}>
-        <input name="userName" placeholder="User Name"/>
-        <input type="password" name="password" placeholder="Password" />
+        <input name="inputUsername" placeholder="User Name"/>
+        <input type="password" name="inputPassword" placeholder="Password" />
         <button type="submit">Log In</button>
     </form>
     </>
   )
 }
-
 export default LoginForm

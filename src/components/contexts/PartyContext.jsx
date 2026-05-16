@@ -1,6 +1,10 @@
-import { useState, createContext } from 'react';
-//=======================================================
-/* 
+/*=========================================================
+ Author:     J. Orlando
+ Date:       May 2026
+ Description: Party Context to manage party state. 
+			To set the state of the party. 
+            The state will render certain components differently.
+==========================================================
  States      siteTemplate│isMystery│isMurder 
  ════════════════════════╪═════════╪════════ 
  Template        True    │   NA    │   NA    
@@ -10,21 +14,21 @@ import { useState, createContext } from 'react';
  Pre-Murder     False    │  True   │ False   
  ────────────────────────┼─────────┼──────── 
  Post-Murder    False    │  True   │  True   
- ════════════════════════╧═════════╧════════ 
-https://plaintexttools.github.io/plain-text-table/ */
+==========================================================*/
+import { useState, useContext, createContext } from 'react';
 
-export const PartyContext = createContext();
+//====== Party Context ===========================
+export const PartyContext = createContext("");
 
-export const PartyContextProvider  = ({ children }) => {
-    const [siteTemplate, setsiteTemplate] = useState(true); //did the mystery start?  
+export const PartyContextProvider  = () => {    //use default state as hard coded variables
+    const [siteTemplate, setsiteTemplate] = useState(true); 
     const [isMystery, setIsMystery] = useState(false); 
     const [isMurder, setIsMurder] = useState(false); 
 
+//====== Context Values ===========================
     const value = {siteTemplate,isMystery,isMurder};
     return (
-    <PartyContext.Provider value={value}>
-        {children}
-    </PartyContext.Provider>
+    <PartyContext.Provider value={value}/>
     );
 }
 export default PartyContextProvider;

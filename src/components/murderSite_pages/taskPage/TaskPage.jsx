@@ -1,24 +1,22 @@
 /*=========================================================
  Author:     J. Orlando
  Date:       May 2026
- Description: Murder mystery character profile page 
-              with various components
+ Description: Murder mystery tasks with various components
 ==========================================================*/
-
-//======Contexts===========================
-
 //======Components=========================
 import Header from "../../header-footers/Header.jsx";
+import CharacterChecklist from "./checklist.jsx";
 
-const CharacterPage = () => {
+const TaskPage = () => {
   return (
     <>
     <Header/>
       <div className="main-content">
-        Character Profile Page here
+        Character Task Page here
+        <CharacterChecklist/>
       </div>         
     </>
   )
 }
 
-export default CharacterPage
+export default TaskPage

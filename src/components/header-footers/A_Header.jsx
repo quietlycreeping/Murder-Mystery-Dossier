@@ -1,5 +1,9 @@
+/*=========================================================
+ Author:     J. Orlando
+ Date:       May 2026
+ Description: Admin header component
+==========================================================*/
 import { Link } from "react-router-dom";
-import "./a_header.css";
 
 const A_Header = () => 
 {

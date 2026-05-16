@@ -1,12 +1,16 @@
+/*=========================================================
+ Author:     J. Orlando
+ Date:       May 2026
+ Description: Core app page
+==========================================================*/
 import { Routes, Route, HashRouter, Link } from "react-router-dom";
-
 //======Contexts===========================
 import { PartyContextProvider } from "./components/contexts/PartyContext.jsx";
-import { UserContextProvider } from "./components/contexts/UserContext.jsx";
-import { ThemeContextProvider } from "./components/contexts/ThemeContext.jsx";
+//import { UserContextProvider } from "./components/contexts/UserContext.jsx";
+//import { ThemeContextProvider } from "./components/contexts/ThemeContext.jsx";
 //======Pages===========================
 import HomePage from "./components/murderSite_pages/homePage/HomePage.jsx";
-import Task1Page from "./components/murderSite_pages/taskPage/Task1Page.jsx";
+import TaskPage from "./components/murderSite_pages/taskPage/TaskPage.jsx";
 import EvidencePage from "./components/murderSite_pages/evidencePage/EvidencePage.jsx";
 import CharacterPage from "./components/murderSite_pages/characterPage/CharacterPage.jsx";
 import LoginPage from "./components/murderSite_pages/loginPage/LoginPage.jsx";
@@ -18,13 +22,12 @@ import A_CharacterPage from "./components/admin_pages/admin_CharacterPage/A_Char
  const App = () => (
   <>
  <PartyContextProvider>
-  <ThemeContextProvider>
-  <UserContextProvider>
+
   
   <HashRouter>
     <Routes>
       <Route path="/" element={<HomePage/>}/>
-      <Route path="/tasks/:userCharacter" element={<Task1Page/>}/>
+      <Route path="/tasks" element={<TaskPage/>}/>
       <Route path="/evidence" element={<EvidencePage/>}/>
       <Route path="/profile" element={<CharacterPage/>}/>
       <Route path="/login" element={<LoginPage/>}/>
@@ -34,8 +37,7 @@ import A_CharacterPage from "./components/admin_pages/admin_CharacterPage/A_Char
     </Routes>
   </HashRouter>
   
-  </UserContextProvider>
-  </ThemeContextProvider>
+
   </PartyContextProvider>
   </>
 )
