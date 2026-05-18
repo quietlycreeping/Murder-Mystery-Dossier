@@ -4,10 +4,8 @@
  Description: Core app page
 ==========================================================*/
 import { Routes, Route, HashRouter, Link } from "react-router-dom";
-//======Contexts===========================
-import { PartyContextProvider } from "./components/contexts/PartyContext.jsx";
-//import { UserContextProvider } from "./components/contexts/UserContext.jsx";
-//import { ThemeContextProvider } from "./components/contexts/ThemeContext.jsx";
+//======Files===========================
+import ContextProviderList from "./ContextProviderList.jsx";
 //======Pages===========================
 import HomePage from "./components/murderSite_pages/homePage/HomePage.jsx";
 import TaskPage from "./components/murderSite_pages/taskPage/TaskPage.jsx";
@@ -21,9 +19,7 @@ import A_CharacterPage from "./components/admin_pages/admin_CharacterPage/A_Char
 
  const App = () => (
   <>
- <PartyContextProvider>
-
-  
+  <ContextProviderList>
   <HashRouter>
     <Routes>
       <Route path="/" element={<HomePage/>}/>
@@ -36,9 +32,7 @@ import A_CharacterPage from "./components/admin_pages/admin_CharacterPage/A_Char
       <Route path="/admin-characters" element={<A_CharacterPage/>}/>
     </Routes>
   </HashRouter>
-  
-
-  </PartyContextProvider>
+  </ContextProviderList>
   </>
 )
 

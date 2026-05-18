@@ -20,7 +20,7 @@ import { useState, useContext, createContext } from 'react';
 //====== Party Context ===========================
 export const PartyContext = createContext("");
 
-export const PartyContextProvider  = () => {    //use default state as hard coded variables
+const PartyContextProvider  = ({children}) => {    //use default state as hard coded variables
     const [siteTemplate, setsiteTemplate] = useState(true); 
     const [isMystery, setIsMystery] = useState(false); 
     const [isMurder, setIsMurder] = useState(false); 
@@ -28,7 +28,9 @@ export const PartyContextProvider  = () => {    //use default state as hard code
 //====== Context Values ===========================
     const value = {siteTemplate,isMystery,isMurder};
     return (
-    <PartyContext.Provider value={value}/>
+    <PartyContext.Provider value={value}>
+        {children}
+    </PartyContext.Provider>
     );
 }
 export default PartyContextProvider;

@@ -15,7 +15,6 @@ const LoginPage = () => {
     <Header/>
       <div className="main-content">
         Login Page here
-        <LoginForm/>
       </div>         
     </>
   )

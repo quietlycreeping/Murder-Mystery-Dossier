@@ -1,44 +1,30 @@
 /*=========================================================
  Author:     J. Orlando
- Date:       June 2026
- Description: User Context to manage user state. 
-			To set the user to the correct character they are assigned to.
-			User state will be remembered with cookies
+ Date:       May 2026
+ Description: User Context to manage the current user state. 
+            To log the current user in and remember state with
+            cookies. It will use the current user to set the correct
+            user info per page.
 ==========================================================*/
-import { createContext, useContext, useState } from 'react';
-import { useNavigate } from "react-router-dom"
-import Cookies from 'js-cookie';
-//=======================================================
-
-// Cookie name for user character = userCharacterCookie
-
-const userName = "name";
-const password = "password";
+import { useState, useContext, createContext } from 'react';
 
 //====== User Context ===========================
-export const UserContext = createContext(null);
+export const UserContext = createContext("");
 
-export const UserContextProvider  = ({ children }) => {
-  const [userCharacter, setUserCharacter] = useState();
-  const [loggedIn, setLogin] = useState(null);
+const UserContextProvider  = ({children}) => {    
+    const [currentUser, setCurrentUser] = useState(""); 
 
-//====== Context Functions ===========================
-
-const setCookie = (name, vaule) => {
-  Cookies.user(name, vaule, {expires: 60});};
+    //functions
 
 //====== Context Values ===========================
-  const value = {
-    userCharacter,
-    //getLoggedIn
-  }
-
-  return (
+    const value = {
+        
+    };
+    
+    return (
     <UserContext.Provider value={value}>
-      {children}
+        {children}
     </UserContext.Provider>
-  );
+    );
 }
 export default UserContextProvider;
-
- 

@@ -5,7 +5,6 @@
 ==========================================================*/
 //======Components=========================
 import Header from "../../header-footers/Header.jsx";
-import CharacterChecklist from "./checklist.jsx";
 
 const TaskPage = () => {
   return (
@@ -13,7 +12,6 @@ const TaskPage = () => {
     <Header/>
       <div className="main-content">
         Character Task Page here
-        <CharacterChecklist/>
       </div>         
     </>
   )
