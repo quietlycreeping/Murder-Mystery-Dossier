@@ -4,13 +4,27 @@
  Description: Murder mystery header component
 ==========================================================*/
 import { Link } from "react-router-dom";
+import { useContext } from "react";
 //======Contexts===========================
+import { PartyContext } from "../contexts/PartyContext";
 //======Components=========================
 
-
+/*=========================================================
+ States       | Header links have access to... 
+ ═════════════════════════════════════════════════════════
+ Template     │  Home, Profile, Tasks, Evidence, Admin   
+ ────────────────────────────────────────────────────────
+ Pre-Party    │  Home, Profile/Logon  
+ ────────────────────────────────────────────────────────
+ Pre-Murder   │  Home, Profile/Logon, Tasks   
+ ────────────────────────────────────────────────────────
+ Post-Murder  │  Home, Profile/Logon, Tasks, Evidence      
+============================================================*/
   
 const Header = () =>   
 {  
+  const {siteTemplate, isMystery, isMurder} = useContext(PartyContext)
+  
   return (
     <>
     <div id="header">

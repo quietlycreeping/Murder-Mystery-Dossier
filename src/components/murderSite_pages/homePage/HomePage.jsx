@@ -10,7 +10,7 @@ import { PartyContext } from "../../contexts/PartyContext.jsx";
 import Header from "../../header-footers/Header.jsx";
 
 const HomePage = () => {
-  const {siteTemplate} = useContext(PartyContext);
+  const {siteTemplate, isMurder} = useContext(PartyContext);
 
   return (
     <>
@@ -18,7 +18,10 @@ const HomePage = () => {
       <div className="main-content">
         <p>Home Page here
           <br/><br/>
-            Party Status: {siteTemplate ? "In Template" : "Party Mode"}</p>
+            Party Status: {siteTemplate ? "In Template" : "Party Mode"}
+          <br/>
+            Murder Status: {isMurder ? "Stab Stab" : "No"}
+          </p>
       </div>         
     </>
   )

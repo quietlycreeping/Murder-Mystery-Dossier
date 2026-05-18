@@ -33,4 +33,4 @@ const PartyContextProvider  = ({children}) => {    //use default state as hard c
     </PartyContext.Provider>
     );
 }
-export default PartyContextProvider;
+export default PartyContextProvider; 
