@@ -7,14 +7,16 @@
             user info per page.
 ==========================================================*/
 import { useState, useContext, createContext } from 'react';
+import Cookies from 'js-cookie';
+
 
 //====== User Context ===========================
-export const UserContext = createContext("");
+export const UserContext = createContext();
 
 const UserContextProvider  = ({children}) => {    
-    const [currentUser, setCurrentUser] = useState(""); 
+    const [currentUser, setCurrentUser] = useState(getCookie("username")); 
 
-    //functions
+
 
 //====== Context Values ===========================
     const value = {

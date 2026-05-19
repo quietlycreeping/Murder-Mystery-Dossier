@@ -18,12 +18,12 @@
 import { useState, useContext, createContext } from 'react';
 
 //====== Party Context ===========================
-export const PartyContext = createContext("");
+export const PartyContext = createContext();
 
 const PartyContextProvider  = ({children}) => {    //use default state as hard coded variables
     const [siteTemplate, setsiteTemplate] = useState(true); 
-    const [isMystery, setIsMystery] = useState(false); 
-    const [isMurder, setIsMurder] = useState(false); 
+    const [isMystery, setIsMystery] = useState(true); 
+    const [isMurder, setIsMurder] = useState(true); 
 
 //====== Context Values ===========================
     const value = {siteTemplate,isMystery,isMurder};

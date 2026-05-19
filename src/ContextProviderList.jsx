@@ -7,11 +7,16 @@
 import PartyContextProvider from "./components/contexts/PartyContext";
 
 
+
 function ContextProviderList({ children }) {
   return (
+    <>
+
     <PartyContextProvider>
         {children}
     </PartyContextProvider>
+
+    </>
   );
 }
 export default ContextProviderList;
