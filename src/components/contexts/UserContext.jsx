@@ -8,19 +8,25 @@
 ==========================================================*/
 import { useState, useContext, createContext } from 'react';
 import Cookies from 'js-cookie';
+import Papa from 'papaparse';
+//====== Files ===========================
 
 
 //====== User Context ===========================
 export const UserContext = createContext();
 
 const UserContextProvider  = ({children}) => {    
-    const [currentUser, setCurrentUser] = useState(getCookie("username")); 
+    const [currentUser, setCurrentUser] = useState((Cookies.get("userCharacter"))); //check if user has a character cookie and then set vaule
+    const [loginStatus, setLoginStatus] = useState(false);
 
+    const handleLogin = () => {
 
+    }
 
 //====== Context Values ===========================
     const value = {
-        
+       currentUser,
+       loginStatus 
     };
     
     return (

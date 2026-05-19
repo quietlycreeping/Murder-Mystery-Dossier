@@ -17,7 +17,8 @@ import A_HomePage from "./components/admin_pages/admin_HomePage/A_HomePage.jsx";
 import A_CharacterPage from "./components/admin_pages/admin_CharacterPage/A_CharacterPage.jsx";
 //======================================
 
- const App = () => (
+ 
+const App = () => (
   <>
   <ContextProviderList>
   <HashRouter>
