@@ -7,6 +7,7 @@ import { Link } from "react-router-dom";
 import { useContext } from "react";
 //======Contexts===========================
 import { PartyContext } from "../contexts/PartyContext";
+import { UserContext } from "../contexts/UserContext";
 //======Components=========================
 
 /*=========================================================
@@ -23,7 +24,9 @@ import { PartyContext } from "../contexts/PartyContext";
   
 const Links = () =>   
 {  
-  const {siteTemplate, isMystery, isMurder} = useContext(PartyContext)
+  const {siteTemplate, isMystery, isMurder} = useContext(PartyContext);
+  const {loginStatus} = useContext(UserContext);
+  
     return (
     <>
           <button><Link to="/"> Home </Link></button>
@@ -32,7 +35,8 @@ const Links = () =>
           
           {(siteTemplate || isMurder) && (<button><Link to="/evidence"> Evidence </Link></button>)}
 
-          <button><Link to="/login"> Login </Link></button>
+          {isMystery && (((loginStatus === true) ? <button><Link to="/profile"> Profile </Link></button> : <button><Link to="/login"> Login </Link></button>))}
+          
 
           {siteTemplate && (<button><Link to="/admin-home"> Admin </Link></button> )}
     </>

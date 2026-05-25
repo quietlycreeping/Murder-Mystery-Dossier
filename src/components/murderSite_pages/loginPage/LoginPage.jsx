@@ -6,7 +6,7 @@
 import { useNavigate } from "react-router-dom"
 //======Components=========================
 import Header from "../../header-footers/Header.jsx";
-//import LoginForm from "./LoginForm.jsx";
+import LoginForm from "./loginForm.jsx";
 
 
 const LoginPage = () => {
@@ -15,6 +15,7 @@ const LoginPage = () => {
     <Header/>
       <div className="main-content">
         Login Page here
+        <LoginForm/>
       </div>         
     </>
   )

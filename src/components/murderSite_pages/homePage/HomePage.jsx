@@ -8,6 +8,7 @@ import { useContext } from "react";
 import { PartyContext } from "../../contexts/PartyContext.jsx";
 //======Components===========================
 import Header from "../../header-footers/Header.jsx";
+import { UserContext } from "../../contexts/UserContext.jsx";
 
 const HomePage = () => {
   const {siteTemplate, isMurder} = useContext(PartyContext);

@@ -5,17 +5,18 @@
 ==========================================================*/
 //======Contexts===========================
 import PartyContextProvider from "./components/contexts/PartyContext";
+import UserContextProvider from "./components/contexts/UserContext";
 
 
 
 function ContextProviderList({ children }) {
   return (
     <>
-
-    <PartyContextProvider>
+      <PartyContextProvider> 
+      <UserContextProvider>
         {children}
-    </PartyContextProvider>
-
+      </UserContextProvider>    
+      </PartyContextProvider>
     </>
   );
 }

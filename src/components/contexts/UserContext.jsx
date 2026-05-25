@@ -5,28 +5,58 @@
             To log the current user in and remember state with
             cookies. It will use the current user to set the correct
             user info per page.
+            -- COOKIE NAMES --
+            user's character: "userCharacter"
+            user's character index vaule: "characterIndex"
 ==========================================================*/
-import { useState, useContext, createContext } from 'react';
+import { useState, useContext, createContext, useEffect } from 'react';
 import Cookies from 'js-cookie';
-import Papa from 'papaparse';
 //====== Files ===========================
-
+import characterLogin from  "../../files/characterLogin.json"
+//=============================================
 
 //====== User Context ===========================
 export const UserContext = createContext();
 
 const UserContextProvider  = ({children}) => {    
-    const [currentUser, setCurrentUser] = useState((Cookies.get("userCharacter"))); //check if user has a character cookie and then set vaule
+    const [currentUser, setCurrentUser] = useState(); //check if user has a character cookie, then sets vaule
+    const [characterIndex, setCharacterIndex] = useState(-1); //if user has character set the id/index of the character array
     const [loginStatus, setLoginStatus] = useState(false);
 
-    const handleLogin = () => {
+    useEffect(() => {
+        const user = Cookies.get('userCharacter');
+        setCurrentUser(user);
+        const index = Cookies.get('characterIndex');
+        setCharacterIndex(index);
+        (user !== undefined) && setLoginStatus(true);    
+    }, []);
 
-    }
+    const handleLogin = (inputUsername, inputPassword) => {
+        //Looks and compares .username array to inputUsername. If a match is found return the index of .username   No match found returns -1
+        const indexVaule = characterLogin.username.findIndex((compareVaule => compareVaule == inputUsername)) 
+        
+        //If username was found, then checks if password matches at the index
+        if ((indexVaule !== -1)) {
+            if (characterLogin.password[indexVaule] == inputPassword)
+            {
+                const authUser = characterLogin.username[indexVaule];
+                setCurrentUser(authUser);
+                Cookies.set("userCharacter", authUser, { expires: 45 }); //cookie expires in a month and a half
+                
+                setCharacterIndex(indexVaule);
+                Cookies.set("characterIndex", indexVaule, { expires: 45 }); //cookie expires in a month and a half
+                
+                setLoginStatus(true);}}
+        else
+            alert('Wrong username or password.');
+    };
 
 //====== Context Values ===========================
     const value = {
-       currentUser,
-       loginStatus 
+        currentUser,
+        characterIndex,
+        loginStatus,
+       handleLogin
     };
     
     return (
