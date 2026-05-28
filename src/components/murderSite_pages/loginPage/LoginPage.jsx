@@ -5,7 +5,7 @@
 ==========================================================*/
 //======Components=========================
 import Header from "../../header-footers/Header.jsx";
-import LoginForm from "./loginForm.jsx";
+import LoginForm from "./LoginForm.jsx";
 
 
 const LoginPage = () => {
