@@ -3,13 +3,14 @@
  Date:       May 2026
  Description: Murder mystery login page with various components
 ==========================================================*/
-// import { useNavigate } from "react-router-dom"
+import { useNavigate, Link } from "react-router-dom";
 import { useState, useContext, useEffect} from "react";
 //======Contexts===========================
 import { UserContext } from "../../contexts/UserContext";
 
 const LoginForm = () => 
 {
+    const navigate = useNavigate(); 
     const {handleLogin,loginStatus} = useContext(UserContext);
 
     const handleSubmit = (formData) => {
@@ -20,8 +21,7 @@ const LoginForm = () =>
     }
     
     useEffect(() => {
-        //loginStatus && (navigate("/profile", {replace: true}));
-        loginStatus && (console.log("logged in"));
+        loginStatus && navigate('/profile', { replace: true }); 
     }, [loginStatus]); 
 
 

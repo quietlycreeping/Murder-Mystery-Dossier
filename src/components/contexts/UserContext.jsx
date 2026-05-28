@@ -7,7 +7,7 @@
             user info per page.
             -- COOKIE NAMES --
             user's character: "userCharacter"
-            user's character index vaule: "characterIndex"
+            user's character key vaule: "userKey"
 ==========================================================*/
 import { useState, useContext, createContext, useEffect } from 'react';
 import Cookies from 'js-cookie';
@@ -20,31 +20,33 @@ export const UserContext = createContext();
 
 const UserContextProvider  = ({children}) => {    
     const [currentUser, setCurrentUser] = useState(); //check if user has a character cookie, then sets vaule
-    const [characterIndex, setCharacterIndex] = useState(-1); //if user has character set the id/index of the character array
+    const [characterKey, setCharacterKey] = useState(-1); //if user has character set the id/index of the character array
     const [loginStatus, setLoginStatus] = useState(false);
 
     useEffect(() => {
-        const user = Cookies.get('userCharacter');
-        setCurrentUser(user);
-        const index = Cookies.get('characterIndex');
-        setCharacterIndex(index);
-        (user !== undefined) && setLoginStatus(true);    
+        var userCharacter = Cookies.get('userCharacter');
+        setCurrentUser(userCharacter);
+        var userKey = Cookies.get('userKey');
+        setCharacterKey(userKey);
+        (userCharacter !== undefined) && setLoginStatus(true);    
     }, []);
 
     const handleLogin = (inputUsername, inputPassword) => {
-        //Looks and compares .username array to inputUsername. If a match is found return the index of .username   No match found returns -1
-        const indexVaule = characterLogin.username.findIndex((compareVaule => compareVaule == inputUsername)) 
+        //Looks and compares .username array to inputUsername. If a match is found return the index of .username | No match found returns -1
+        var indexVaule = characterLogin.username.findIndex((compareVaule => compareVaule == inputUsername)) 
         
         //If username was found, then checks if password matches at the index
         if ((indexVaule !== -1)) {
             if (characterLogin.password[indexVaule] == inputPassword)
             {
-                const authUser = characterLogin.username[indexVaule];
+                var authUser = characterLogin.username[indexVaule];
                 setCurrentUser(authUser);
                 Cookies.set("userCharacter", authUser, { expires: 45 }); //cookie expires in a month and a half
                 
-                setCharacterIndex(indexVaule);
-                Cookies.set("characterIndex", indexVaule, { expires: 45 }); //cookie expires in a month and a half
+                var userKey = indexVaule + authUser; // #CharacterName , 4Jingle
+                console.log(userKey);
+                setCharacterKey(userKey);
+                Cookies.set("userKey", userKey, { expires: 45 }); //cookie expires in a month and a half
                 
                 setLoginStatus(true);}}
         else
@@ -54,9 +56,9 @@ const UserContextProvider  = ({children}) => {
 //====== Context Values ===========================
     const value = {
         currentUser,
-        characterIndex,
+        characterKey,
         loginStatus,
-       handleLogin
+        handleLogin
     };
     
     return (
