@@ -1,0 +1,93 @@
+{
+  "partyData": {
+        "startTime": "start time",
+        "timerName": "timer name"
+  },
+
+  "guestData": {
+        "guestKey": [],
+        "name": [],
+        "invite": [],
+        "coming": [],
+        "characterAssignment": []
+  },
+
+  "loginData": {
+        "username": ["Jingle"],
+        "password": ["toys"]
+  },
+
+  "characterData": {
+        "name": [],
+        "title": [],
+
+        "bioBlurb": [],
+
+        "personality1": [],
+        "personality2": [],
+        "personality3": [],
+
+        "relation1": [],
+        "relation2": [],
+        "relation3": [],
+
+        "backstory": [],
+        "acting": [],
+        "dress": []
+  },
+
+  "preTaskData": {
+        "1": [],
+        "2": [],
+        "3": [],
+        "4": [],
+        "5": [],
+        "6": [],
+        "7": [],
+        "10": [],
+        "11": [],
+        "12": []
+  },
+
+  "postTaskData": {
+        "secret": {
+            "1": [],
+            "2": [],
+            "3": [],
+            "4": [],
+            "5": []
+        },
+        "task": {
+            "1": [],
+            "2": [],
+            "3": [],
+            "4": [],
+            "5": [],
+            "6": [],
+            "7": [],
+            "10": []
+        }
+  },
+
+  "evidenceData": {
+        "evidenceKey": [],
+        "name": [],
+        "about": [],
+        "owner": [],
+        "render": [],
+        "password": []
+  },
+
+  "storyData": {
+        "newsKey": [],
+        "newsHeader": [],
+        "newsContent": [],
+
+        "biosHeader": "bios header",
+
+        "aboutHeader": "about header",
+        "aboutContent": "about content",
+
+        "profileGreeting": "profile greeting"
+  }
+}

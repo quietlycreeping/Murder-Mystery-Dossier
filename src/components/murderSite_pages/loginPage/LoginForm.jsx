@@ -15,7 +15,6 @@ const LoginForm = () =>
 
     const handleSubmit = (formData) => {
         const inputedUser = formData.get("username");
-        console.log(inputedUser);
         const inputedPassword = formData.get("password");
         handleLogin(inputedUser,inputedPassword);
     }

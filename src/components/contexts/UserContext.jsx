@@ -12,16 +12,16 @@
 import { useState, useContext, createContext, useEffect } from 'react';
 import Cookies from 'js-cookie';
 //====== Files ===========================
-import characterLogin from  "../../files/characterLogin.json"
+import data from "../../files/data.json"
 //=============================================
 
-//====== User Context ===========================
+//====== User Context =======================================
 export const UserContext = createContext();
 
 const UserContextProvider  = ({children}) => {    
     const [currentUser, setCurrentUser] = useState(); //check if user has a character cookie, then sets vaule
-    const [characterKey, setCharacterKey] = useState(-1); //if user has character set the id/index of the character array
-    const [loginStatus, setLoginStatus] = useState(false);
+    const [characterKey, setCharacterKey] = useState(); //if user has character set the id/index of the character array
+    const [loginStatus, setLoginStatus] = useState();
 
     useEffect(() => {
         var userCharacter = Cookies.get('userCharacter');
@@ -33,26 +33,23 @@ const UserContextProvider  = ({children}) => {
 
     const handleLogin = (inputUsername, inputPassword) => {
         //Looks and compares .username array to inputUsername. If a match is found return the index of .username | No match found returns -1
-        var indexVaule = characterLogin.username.findIndex((compareVaule => compareVaule == inputUsername)) 
-        
+        var indexVaule = data.loginData.username.findIndex((compareVaule => compareVaule == inputUsername)) 
+
         //If username was found, then checks if password matches at the index
         if ((indexVaule !== -1)) {
-            if (characterLogin.password[indexVaule] == inputPassword)
+            if (data.loginData.password[indexVaule] == inputPassword)
             {
-                var authUser = characterLogin.username[indexVaule];
+                var authUser = data.loginData.username[indexVaule];
                 setCurrentUser(authUser);
                 Cookies.set("userCharacter", authUser, { expires: 45 }); //cookie expires in a month and a half
                 
-                var userKey = indexVaule + authUser; // #CharacterName , 4Jingle
-                console.log(userKey);
-                setCharacterKey(userKey);
-                Cookies.set("userKey", userKey, { expires: 45 }); //cookie expires in a month and a half
+                setCharacterKey(indexVaule);
+                Cookies.set("userKey", indexVaule, { expires: 45 }); //cookie expires in a month and a half
                 
                 setLoginStatus(true);}}
         else
             alert('Wrong username or password.');
     };
-
 //====== Context Values ===========================
     const value = {
         currentUser,
