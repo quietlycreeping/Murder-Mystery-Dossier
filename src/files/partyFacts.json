@@ -1,6 +1,22 @@
 {
-    "startTime" : "1,1,1111",
-    "guestCount" : 5,
-    "aboutTitle" : "About Title",
-    "about" : "About string here."
+    "aboutData": {
+        "startTime": "",
+        "timerName": "",
+
+        "aboutHeader": "",
+        "aboutContent": "",
+
+        "profileGreeting": ""
+    },
+
+    "newsData": {
+        "key": [],
+        "newsHeader": [],
+        "newsContent": []
+    },
+
+    "bioData": {
+        "biosHeader": "",
+        "bioBlurbs": []
+    }
 }

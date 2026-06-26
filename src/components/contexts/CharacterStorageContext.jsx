@@ -25,20 +25,9 @@ const CharacterStorageContextProvider  = ({children}) => {
     })
     const [characterTasks, setCharacterTasks] = useState({
         pre: [],
-        preCheckStatus: [], 
+        secrets: [],
         post: [],
-        postCheckStatus: [], 
     })
-
-    /*useEffect(() => {
-        if (loginStatus==true)
-        {
-            if (localStorage exists)
-                handleLoadStorage();
-            else
-                handleGenerateStorage();
-        }
-    }, [loginStatus]);*/
 
     const handleLoadStorage = () => {
         //TODO: take vaules from storage and set them
@@ -52,7 +41,9 @@ const CharacterStorageContextProvider  = ({children}) => {
 //====== Context Values ===========================
     const value = {
         characterVaules,
-        characterTasks
+        characterTasks,
+        handleLoadStorage,
+        handleGenerateStorage
     };
     
     return (

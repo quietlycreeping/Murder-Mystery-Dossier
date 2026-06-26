@@ -1,0 +1,60 @@
+==== CHARACTER FACTS ====
+{
+  "loginData": {
+        "username": [],
+        "password": []
+  },
+
+  "characterData": {    
+        "name": [],
+        "title": [],
+
+        "personality": [[]],
+        "relations": [[]],
+
+        "backstory": [],
+        "acting": [],
+        "dress": [],
+
+        "key": [], 
+        "preTasks": [[]],
+        "secrets": [[]],
+        "postTasks": [[]]
+  }
+}
+
+==== GUEST FACTS ====
+{
+    "guestData": {
+        "key": [],
+        "count" : 0,
+        "name": [],
+        "invite": [],
+        "coming": [],
+        "characterAssignment": []
+    }
+}
+
+==== PARTY FACTS ====
+{
+    "aboutData": {
+        "startTime": "",
+        "timerName": "",
+
+        "aboutHeader": "",
+        "aboutContent": "",
+
+        "profileGreeting": ""
+    },
+
+    "newsData": {
+        "key": [],
+        "newsHeader": [],
+        "newsContent": []
+    },
+
+    "bioData": {
+        "biosHeader": "",
+        "bioBlurbs": []
+    }
+}

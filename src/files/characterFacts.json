@@ -1,0 +1,22 @@
+{
+  "loginData": {
+        "username": ["Jingle"],
+        "password": ["toys"]
+  },
+
+  "characterData": {    
+        "name": ["Jingle"],
+        "title": ["elf"],
+
+        "personalities": [["sad","mad","glad"]],
+        "relations": [["dad: Dr. Johns", "boss: Santa"]],
+
+        "backstory": ["backstory"],
+        "acting": ["acting"],
+        "dress": ["outfit"],
+
+        "preTasks": [[]],
+        "secrets": [[]],
+        "postTasks": [[]]
+  }
+}
